@@ -2,7 +2,7 @@ def start_game():
     """
     Allow player to enter name and start quiz.
     """
-    print("⭐⭐⭐⭐⭐ Welcome to the Quiz game! ⭐⭐⭐⭐⭐")
+    print("⭐⭐⭐⭐⭐ Welcome to Our Planets quiz! ⭐⭐⭐⭐⭐")
     player_name = input("Please enter your name: \n")
     
     if player_name=="":
@@ -14,6 +14,7 @@ def start_game():
         player_name = player_name.capitalize()  
 
         start=input(f"Hi {player_name} and welcome! Would you like to start the game? (y/n) \n")
+        start = start.lower()
 
         if start=="y":
             print("Lets start the game!⭐ \n")
@@ -37,31 +38,35 @@ def new_game():
     question_num = 1
 
     for key in questions:
-        print("*****************")
+        print("*************************")
         print(key)
         for i in options[question_num-1]:
             print(i)
-        guess = input("Enter (a, b or c): ")
-        guess = guess.lower()
 
-        if guess=="a" or guess=="b" or guess=="c":
+            valid_inputs = ["a", "b", "c"]
+        
+            while True:
+                answer = input("Enter (a, b or c): ")
+                guess = answer.lower()
+                if answer in valid_inputs:
+                    guesses.append(guess)
 
-            guesses.append(guess)
+                    correct_guesses += check_answer(questions.get(key), guess)
+                    question_num += 1
+                    break
+                else:
+                    print("Invalid input, please enter a, b or c")
 
-            correct_guesses += check_answer(questions.get(key), guess)
-            question_num += 1
-        else: 
-            print("Invalid input! Please answer a, b or c")
-            start_game()
-             
+         
 
     display_score(correct_guesses, guesses)
 
 # -------------------------
 def check_answer(answer, guess):
     """
-    Displays correst or wrong answer after every question after the player has answered to let the 
-    user see if the anser was correct.
+    Displays correst or wrong answer after every question 
+    (after the player has answered) in order to let the 
+    user see directly if the anser was correct.
     """
 
     if answer == guess:
@@ -78,7 +83,7 @@ def display_score(correct_guesses, guesses):
     of scores shows in order to let the user see the answers compared to the right
     answers as well as the total score contained.
     """
-    print("*****************")
+    print("*************************")
     print("Your results:")
    
 
@@ -109,29 +114,29 @@ def play_again():
         return True
     else:
         return False
-# -------------------------
+
 
 
 questions = {
- "⭐ Who created Python?: ": "a",
- "⭐ What year was Python created?: ": "b",
- "⭐ Python is tributed to which comedy group?: ": "c",
- "⭐ Is the Earth round?: ": "a",
- "⭐ What is the capital of Sweden: ": "a",
- "⭐ What year was the moon land: ": "b",
- "⭐ What creature is said to sit in a stream and suduce people to drown with his violon playing?: ": "c",
- "⭐ What is the capital of Finland?: ": "a"
+ "⭐ Which is the 5th planet from the sun?: ": "a",
+ "⭐ Which is one of Saturns moons?: ": "b",
+ "⭐ Which planet is closest to the sun: ": "c",
+ "⭐ Which atmospheric color does Neptune have?: ": "a",
+ "⭐ How long time does it take for the sunlight to reach the earth?: ": "b",
+ "⭐ Which year was the first moon landing: ": "b",
+ "⭐ What is the characteristic anticyclonic storm on Jupiter called: ": "c",
+ "⭐ How many years ago did the solar system form?: ": "b"
 }
 
 options = [
-          ["a. Guido van Rossum", "b. Elon Musk", "c. Bill Gates"],
-          ["a. 1989", "b. 1991", "c. 2000"],
-          ["a. Lonely Island", "b. Smosh", "c. Monty Python"],
-          ["a. True","b. False", "c. sometimes"],
-          ["a. Stockholm", "b. Kopenhagen", "c. Helsinki"],
+          ["a. Jupiter", "b. Saturnus", "c. Mars"],
+          ["a. Europa", "b. Titan", "c. Io"],
+          ["a. Saturn", "b. Venus", "c. Mercury"],
+          ["a. Blue","b. Red", "c. White"],
+          ["a. 8 seconds", "b. 8 minutes", "c. 8 hours"],
           ["a. 1989", "b. 1969", "c. 1949", "d. 1972"],
-          ["a. Santa", "b. Elf", "c. The neck"],
-          ["a. Helsinki", "b. Reykjavik", "c. Lund"]
+          ["a. Great Blue Spot", "b. Elfa", "c. Great Red Spot"],
+          ["a. 140 million", "b. 4,5 billion", "c. 2,5 billion"]
           ]
 
 start_game()
