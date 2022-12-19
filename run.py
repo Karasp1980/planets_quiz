@@ -4,23 +4,22 @@ def start_game():
     """
     print("⭐⭐⭐⭐⭐ Welcome to Our Planets quiz! ⭐⭐⭐⭐⭐")
     player_name = input("Please enter your name: \n")
-    
-    if player_name=="":
+
+    if player_name =="":
         print("A name is required to start the quiz, please try again.")
         start_game()
 
     else:
-        # Capiralizes the first letter in the name in case user enteres only lowercase letters
+        # Capiralizes the first letter in the name in case 
+        # user enteres only lowercase letters
         player_name = player_name.capitalize()  
 
         start=input(f"Hi {player_name} and welcome! Would you like to start the game? (y/n) \n")
         start = start.lower()
 
-        if start=="y":
+        if start == "y":
             print("Lets start the game!⭐ \n")
             new_game()
-
-
 
         elif start=="n":
             print("Welcome back next time, bye! \n") 
@@ -38,24 +37,28 @@ def new_game():
     question_num = 1
 
     for key in questions:
-        print("*************************")
+        print("* * * * * * * * * * * * * * * * * * * * * * * * *")
         print(key)
-        for i in options[question_num-1]:
-            print(i)
-
-            valid_inputs = ["a", "b", "c"]
+  
+        while True:
         
-            while True:
-                answer = input("Enter (a, b or c): ")
-                guess = answer.lower()
-                if answer in valid_inputs:
-                    guesses.append(guess)
+            valid_inputs = ["a", "b", "c"]
 
-                    correct_guesses += check_answer(questions.get(key), guess)
-                    question_num += 1
-                    break
-                else:
-                    print("Invalid input, please enter a, b or c")
+            for i in options[question_num-1]:
+                print(i)
+            guess = input("Enter (a, b or c): ")
+            guess = guess.lower()
+                
+            if guess in valid_inputs:
+                guesses.append(guess)
+
+                correct_guesses += check_answer(questions.get(key), guess)
+                question_num += 1
+                break
+                
+            else:
+                print("Invalid input, please enter a, b or c")
+            
 
          
 
@@ -83,7 +86,7 @@ def display_score(correct_guesses, guesses):
     of scores shows in order to let the user see the answers compared to the right
     answers as well as the total score contained.
     """
-    print("*************************")
+    print("* * * * * * * * * * * * * * * * * * * * * * * * *")
     print("Your results:")
    
 
@@ -97,8 +100,6 @@ def display_score(correct_guesses, guesses):
         print(i, end=" ")
     print()
 
-    #score = int((correct_guesses/len(questions))*100)
-    #print("Your score is: "+str(score)+"%")
     print(f"Good job, you scored: {correct_guesses} out of {len(questions)}")
 
 # -------------------------
@@ -114,8 +115,6 @@ def play_again():
         return True
     else:
         return False
-
-
 
 questions = {
  "⭐ Which is the 5th planet from the sun?: ": "a",
@@ -145,3 +144,5 @@ while play_again():
     new_game()
 
 print("Thanks for playing!")
+
+
