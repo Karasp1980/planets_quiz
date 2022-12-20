@@ -22,7 +22,7 @@ def start_game():
             start = start.lower()
 
         if start == "y":
-            print("Lets start the game!⭐ \n")
+            print("Let´s start the game!⭐ \n")
             new_game()
         elif start == "n":
             print("Welcome back next time, bye! \n") 
@@ -64,18 +64,19 @@ def new_game():
     display_score(correct_guesses, guesses)
     again = play_again()
 
+    # If play_again returns True (player inputs yes when asked   
+    # "Do you want to play again? in the play_again function) 
+    # the new_game() function is called
+
     if again:
         new_game()
     
-
-   
-
 # -------------------------
 def check_answer(answer, guess):
     """
     Displays correst or wrong answer after every question 
     (after the player has answered) in order to let the 
-    user see directly if the anser was correct.
+    user see directly if the anser was correct or not.
     """
 
     if answer == guess:
