@@ -59,11 +59,16 @@ def new_game():
                 
             else:
                 print("Invalid input, please enter a, b or c")
-        
-    display_score(correct_guesses, guesses)
 
-    while play_again():
+            
+    display_score(correct_guesses, guesses)
+    again = play_again()
+
+    if again:
         new_game()
+    
+
+   
 
 # -------------------------
 def check_answer(answer, guess):
@@ -117,6 +122,7 @@ def play_again():
 
     response = input("Do you want to play again? (y/n): ")
     response = response.lower()
+
 
     while response != 'y' and response != 'n':
             response = input("Invalid input! Do you want to play again? (y/n): ")
