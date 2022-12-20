@@ -5,31 +5,32 @@ def start_game():
     print("⭐⭐⭐⭐⭐ Welcome to Our Planets quiz! ⭐⭐⭐⭐⭐")
     player_name = input("Please enter your name: \n")
 
-    if player_name =="":
+    if player_name == " ":
         print("A name is required to start the quiz, please try again.")
         start_game()
 
     else:
-        # Capiralizes the first letter in the name in case 
+        # Capitalizes the first letter in the name in case
         # user enteres only lowercase letters
-        player_name = player_name.capitalize()  
-
-        start=input(f"Hi {player_name} and welcome! Would you like to start the game? (y/n) \n")
+        player_name = player_name.capitalize()
+        start = input(f"Hi {player_name} and welcome! Would you like to start the game? (y/n) \n")
         start = start.lower()
+
+        
+        while start != 'y' and start != 'n':
+            start = input("Invalid input! Do you want to play? (y/n): ")
+            start = start.lower()
 
         if start == "y":
             print("Lets start the game!⭐ \n")
             new_game()
-
-        elif start=="n":
+        elif start == "n":
             print("Welcome back next time, bye! \n") 
-            return start_game()
-        else:
-            print("Invalid input! Would you like to start the game? (y/n) \n")     
+
 
 def new_game():
     """
-    Creates a new game and starts the game and starts displaying questions.
+     Creates a new game and starts the game and starts displaying questions.
     """
 
     guesses = []
@@ -39,7 +40,7 @@ def new_game():
     for key in questions:
         print("* * * * * * * * * * * * * * * * * * * * * * * * *")
         print(key)
-  
+        
         while True:
         
             valid_inputs = ["a", "b", "c"]
@@ -58,11 +59,11 @@ def new_game():
                 
             else:
                 print("Invalid input, please enter a, b or c")
-            
-
-         
-
+        
     display_score(correct_guesses, guesses)
+
+    while play_again():
+        new_game()
 
 # -------------------------
 def check_answer(answer, guess):
@@ -82,14 +83,13 @@ def check_answer(answer, guess):
 # -------------------------
 def display_score(correct_guesses, guesses):
     """
-    When the game is finished and all the question has been answered a display  
-    of scores shows in order to let the user see the answers compared to the right
+    When the game is finished and all the question has 
+    been answered a display of scores shows in order to 
+    let the user see the answers compared to the right
     answers as well as the total score contained.
     """
     print("* * * * * * * * * * * * * * * * * * * * * * * * *")
     print("Your results:")
-   
-
     print("Answers: ", end="")
     for i in questions:
         print(questions.get(i), end=" ")
@@ -100,7 +100,14 @@ def display_score(correct_guesses, guesses):
         print(i, end=" ")
     print()
 
-    print(f"Good job, you scored: {correct_guesses} out of {len(questions)}")
+    # Print out number of stars according to number of scores
+    stars = []
+    j = 0
+    while j < correct_guesses:
+        stars.append("⭐")
+        j += 1   
+  
+    print(f"Good job, you scored: {correct_guesses} out of {len(questions)} {''.join(stars)}")
 
 # -------------------------
 def play_again():
@@ -111,10 +118,17 @@ def play_again():
     response = input("Do you want to play again? (y/n): ")
     response = response.lower()
 
+    while response != 'y' and response != 'n':
+            response = input("Invalid input! Do you want to play again? (y/n): ")
+            response = response.lower()
+
     if response == "y":
         return True
-    else:
-        return False
+    elif response == "n":
+        print("Thanks for playing!")
+        return False 
+        
+        
 
 questions = {
  "⭐ Which is the 5th planet from the sun?: ": "a",
@@ -131,7 +145,7 @@ options = [
           ["a. Jupiter", "b. Saturnus", "c. Mars"],
           ["a. Europa", "b. Titan", "c. Io"],
           ["a. Saturn", "b. Venus", "c. Mercury"],
-          ["a. Blue","b. Red", "c. White"],
+          ["a. Blue", "b. Red", "c. White"],
           ["a. 8 seconds", "b. 8 minutes", "c. 8 hours"],
           ["a. 1989", "b. 1969", "c. 1949", "d. 1972"],
           ["a. Great Blue Spot", "b. Elfa", "c. Great Red Spot"],
@@ -140,9 +154,7 @@ options = [
 
 start_game()
 
-while play_again():
-    new_game()
 
-print("Thanks for playing!")
+
 
 
