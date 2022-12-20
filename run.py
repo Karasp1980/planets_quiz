@@ -16,7 +16,7 @@ def start_game():
         start = input(f"Hi {player_name} and welcome! Would you like to start the game? (y/n) \n")
         start = start.lower()
 
-        
+        # Check that the input value is valid (y or n)
         while start != 'y' and start != 'n':
             start = input("Invalid input! Do you want to play? (y/n): ")
             start = start.lower()
@@ -100,7 +100,7 @@ def display_score(correct_guesses, guesses):
         print(i, end=" ")
     print()
 
-    # Print out number of stars according to number of scores
+    # Prints out a number of stars according to number of scores
     stars = []
     j = 0
     while j < correct_guesses:

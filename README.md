@@ -1,8 +1,8 @@
 
-![Quiz game]()
+![Planets Quiz game](/assets/images/solar-system.jpg)
 
-# Welcome to Quiz game!
-#### T
+# Welcome to Planets Quiz game!
+#### This game is designed in order to play a quiz game about the Planets in our solar system! 
 
 #### [Deployed site]()
 ------
