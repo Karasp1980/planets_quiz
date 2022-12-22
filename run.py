@@ -20,6 +20,7 @@ SHEET = GSPREAD_CLIENT.open('planets-quiz')
 questions = SHEET.worksheet('questions')
 question_data = questions.get_all_values()
 
+
 answers_a = SHEET.worksheet('answers_a')
 answer_a_data = answers_a.get_all_values()
 
@@ -28,7 +29,6 @@ answer_b_data = answers_b.get_all_values()
 
 answers_c = SHEET.worksheet('answers_c')
 answer_c_data = answers_c.get_all_values()
-
 
 def start_game():
     """
@@ -84,7 +84,7 @@ def new_game():
             if guess in valid_inputs:
                 guesses.append(guess)
 
-                correct_guesses += check_answer(questions.get(key), guess)
+                correct_guesses += check_answer(planet_questions.get(key), guess)
                 question_num += 1
                 break
                 
@@ -127,8 +127,8 @@ def display_score(correct_guesses, guesses):
     print("* * * * * * * * * * * * * * * * * * * * * * * * *")
     print("Your results:")
     print("Answers: ", end="")
-    for i in questions:
-        print(questions.get(i), end=" ")
+    for i in planet_questions:
+        print(planet_questions.get(i), end=" ")
     print()
 
     print("Guesses: ", end="")
@@ -143,7 +143,7 @@ def display_score(correct_guesses, guesses):
         stars.append("⭐")
         j += 1   
   
-    print(f"Good job, you scored: {correct_guesses} out of {len(questions)} {''.join(stars)}")
+    print(f"Good job, you scored: {correct_guesses} out of {len(planet_questions)} {''.join(stars)}")
 
 def play_again():
     """
@@ -162,7 +162,7 @@ def play_again():
     elif response == "n":
         print("Thanks for playing!")
         return False 
-    
+ 
 
 planet_questions = {
     question_data[0][0]: "a",
@@ -189,7 +189,6 @@ options = [
 
 
 start_game()
-
 
 
 
