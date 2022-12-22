@@ -1,12 +1,42 @@
+"""
+Import required modules
+"""
+import gspread
+from google.oauth2.service_account import Credentials
+
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('planets-quiz')
+
+questions = SHEET.worksheet('questions')
+questions = questions.get_all_values()
+
+answers-a = SHEET.worksheet('answers-a')
+answer-a_data = answers-a.get_all_values()
+
+answers-b = SHEET.worksheet('answers-b')
+answer-b-data = answers-b.get_all_values()
+
+answers-c = SHEET.worksheet('answers-c')
+answer-c-data = answers-c.get_all_values()
+
+
 def start_game():
     """
     Allow player to enter name and start quiz.
     """
     print("⭐⭐⭐⭐⭐ Welcome to Our Planets quiz! ⭐⭐⭐⭐⭐")
-    player_name = input("Please enter your name: \n")
+    player_name = input("Please enter your username: \n")
 
     if player_name == " ":
-        print("A name is required to start the quiz, please try again.")
+        print("A username is required to start the quiz, please try again.")
         start_game()
 
     else:
@@ -27,7 +57,6 @@ def start_game():
         elif start == "n":
             print("Welcome back next time, bye! \n") 
 
-
 def new_game():
     """
      Creates a new game and starts the game and starts displaying questions.
@@ -37,7 +66,7 @@ def new_game():
     correct_guesses = 0
     question_num = 1
 
-    for key in questions:
+    for key in planet-questions:
         print("* * * * * * * * * * * * * * * * * * * * * * * * *")
         print(key)
         
@@ -71,7 +100,7 @@ def new_game():
     if again:
         new_game()
     
-# -------------------------
+
 def check_answer(answer, guess):
     """
     Displays correst or wrong answer after every question 
@@ -86,7 +115,6 @@ def check_answer(answer, guess):
         print("WRONG!")
         return 0
 
-# -------------------------
 def display_score(correct_guesses, guesses):
     """
     When the game is finished and all the question has 
@@ -115,7 +143,6 @@ def display_score(correct_guesses, guesses):
   
     print(f"Good job, you scored: {correct_guesses} out of {len(questions)} {''.join(stars)}")
 
-# -------------------------
 def play_again():
     """
     Allows the player to chose to play again or quit the game.
@@ -123,7 +150,6 @@ def play_again():
 
     response = input("Do you want to play again? (y/n): ")
     response = response.lower()
-
 
     while response != 'y' and response != 'n':
             response = input("Invalid input! Do you want to play again? (y/n): ")
@@ -134,32 +160,35 @@ def play_again():
     elif response == "n":
         print("Thanks for playing!")
         return False 
-        
-        
+    
 
-questions = {
- "⭐ Which is the 5th planet from the sun?: ": "a",
- "⭐ Which is one of Saturns moons?: ": "b",
- "⭐ Which planet is closest to the sun: ": "c",
- "⭐ Which atmospheric color does Neptune have?: ": "a",
- "⭐ How long time does it take for the sunlight to reach the earth?: ": "b",
- "⭐ Which year was the first moon landing: ": "b",
- "⭐ What is the characteristic anticyclonic storm on Jupiter called: ": "c",
- "⭐ How many years ago did the solar system form?: ": "b"
+planet-questions = {
+    question-data[1][0]: "a",
+    question-data[2][0]: "b",
+    question-data[3][0]: "c",
+    question-data[4][0]: "a",
+    question-data[5][0]: "b",
+    question-data[6][0]: "b",
+    question-data[7][0]: "c",
+    question-data[8][0]: "b",
 }
 
+# Create lists with embedded lists of possible answers from worksheet
 options = [
-          ["a. Jupiter", "b. Saturnus", "c. Mars"],
-          ["a. Europa", "b. Titan", "c. Io"],
-          ["a. Saturn", "b. Venus", "c. Mercury"],
-          ["a. Blue", "b. Red", "c. White"],
-          ["a. 8 seconds", "b. 8 minutes", "c. 8 hours"],
-          ["a. 1989", "b. 1969", "c. 1949", "d. 1972"],
-          ["a. Great Blue Spot", "b. Elfa", "c. Great Red Spot"],
-          ["a. 140 million", "b. 4,5 billion", "c. 2,5 billion"]
-          ]
+    [answer-a-data[1][0], answer-b-data[1][0], answer-c-data[1][0]],
+    [answer-a-data[2][0], answer-b-data[2][0], answer-c-data[2][0]],
+    [answer-a-data[3][0], answer-b-data[3][0], answer-c-data[3][0]],
+    [answer-a-data[4][0], answer-b-data[4][0], answer-c-data[4][0]],
+    [answer-a-data[5][0], answer-b-data[5][0], answer-c-data[5][0]],
+    [answer-a-data[6][0], answer-b-data[6][0], answer-c-data[6][0]],
+    [answer-a-data[7][0], answer-b-data[7][0], answer-c-data[7][0]],
+    [answer-a-data[8][0], answer-b-data[8][0], answer-c-data[8][0]]
+]
+
 
 start_game()
+
+
 
 
 

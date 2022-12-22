@@ -14,10 +14,12 @@
 + [Features](#features)
   + [](#)
 + [Testing](#testing)
+  + [Ufixed bugs](#unfixed-bugs)
++ [Solved issues](#solved-issues) 
 + [Validator testing](#validator-testing)
   + [Python](#python)
-+ [Unfixed bugs](#unfixed-bugs)
-  [Solved issues](#solved-issues)  
++ [Ufixed bugs](#unfixed-bugs)
++ [Solved issues](#solved-issues)  
 + [Deployment](#deployment)  
 + [Media](#media)  
 + [Credits](#credits)  
@@ -81,6 +83,7 @@
 
 ## Solved issues
 * When a game is over and the player gets the question "Do yo want to play again?" we want the game to restart and keep doing that as long as the player inputs yes (y) when asked the question. Therefore a while loop (with the condition while play_again() is True, call new_game() ) was added to the end of the new_game() function (after the scores have been displayed). But then the user got that question "Do yoy want to play again?" two times if answering no (n) to the question when having played more than one time. In order to fix that an if statement was used instead.
+![Bug 1](/assets/images/bug1.png)
 
 
 -----
