@@ -64,6 +64,11 @@
 
 #### I confirmed that the game is readable and easy to understand and all the game functions are working.
 
+### Testing during development
+* Tested that the data was gotten as expected from the google sheet "planets-quiz" by printing out data from the spreadsheet and also adding data from run.py to the spreadsheet
+
+![Test getting data from google sheets](/assets/images/test-print-add-data.png)
+![Test getting data from google sheets](/assets/images/test-print-add-data-google-sheets.png)
 
 ------
 

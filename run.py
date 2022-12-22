@@ -17,6 +17,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('planets-quiz')
 
+# Get data from google spread sheet 
 questions = SHEET.worksheet('questions')
 question_data = questions.get_all_values()
 
@@ -29,6 +30,8 @@ answer_b_data = answers_b.get_all_values()
 
 answers_c = SHEET.worksheet('answers_c')
 answer_c_data = answers_c.get_all_values()
+
+
 
 def start_game():
     """
@@ -162,7 +165,7 @@ def play_again():
     elif response == "n":
         print("Thanks for playing!")
         return False 
- 
+
 
 planet_questions = {
     question_data[0][0]: "a",
@@ -189,6 +192,5 @@ options = [
 
 
 start_game()
-
 
 
