@@ -1,7 +1,9 @@
 """
 Import required modules
 """
+
 import gspread
+
 from google.oauth2.service_account import Credentials
 
 SCOPE = [
@@ -16,16 +18,16 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('planets-quiz')
 
 questions = SHEET.worksheet('questions')
-questions = questions.get_all_values()
+question_data = questions.get_all_values()
 
-answers-a = SHEET.worksheet('answers-a')
-answer-a_data = answers-a.get_all_values()
+answers_a = SHEET.worksheet('answers_a')
+answer_a_data = answers_a.get_all_values()
 
-answers-b = SHEET.worksheet('answers-b')
-answer-b-data = answers-b.get_all_values()
+answers_b = SHEET.worksheet('answers_b')
+answer_b_data = answers_b.get_all_values()
 
-answers-c = SHEET.worksheet('answers-c')
-answer-c-data = answers-c.get_all_values()
+answers_c = SHEET.worksheet('answers_c')
+answer_c_data = answers_c.get_all_values()
 
 
 def start_game():
@@ -66,7 +68,7 @@ def new_game():
     correct_guesses = 0
     question_num = 1
 
-    for key in planet-questions:
+    for key in planet_questions:
         print("* * * * * * * * * * * * * * * * * * * * * * * * *")
         print(key)
         
@@ -162,34 +164,31 @@ def play_again():
         return False 
     
 
-planet-questions = {
-    question-data[1][0]: "a",
-    question-data[2][0]: "b",
-    question-data[3][0]: "c",
-    question-data[4][0]: "a",
-    question-data[5][0]: "b",
-    question-data[6][0]: "b",
-    question-data[7][0]: "c",
-    question-data[8][0]: "b",
+planet_questions = {
+    question_data[0][0]: "a",
+    question_data[1][0]: "b",
+    question_data[2][0]: "c",
+    question_data[3][0]: "a",
+    question_data[4][0]: "b",
+    question_data[5][0]: "b",
+    question_data[6][0]: "c",
+    question_data[7][0]: "b",
 }
 
 # Create lists with embedded lists of possible answers from worksheet
 options = [
-    [answer-a-data[1][0], answer-b-data[1][0], answer-c-data[1][0]],
-    [answer-a-data[2][0], answer-b-data[2][0], answer-c-data[2][0]],
-    [answer-a-data[3][0], answer-b-data[3][0], answer-c-data[3][0]],
-    [answer-a-data[4][0], answer-b-data[4][0], answer-c-data[4][0]],
-    [answer-a-data[5][0], answer-b-data[5][0], answer-c-data[5][0]],
-    [answer-a-data[6][0], answer-b-data[6][0], answer-c-data[6][0]],
-    [answer-a-data[7][0], answer-b-data[7][0], answer-c-data[7][0]],
-    [answer-a-data[8][0], answer-b-data[8][0], answer-c-data[8][0]]
+    [answer_a_data[0][0], answer_b_data[1][0], answer_c_data[1][0]],
+    [answer_a_data[1][0], answer_b_data[1][0], answer_c_data[1][0]],
+    [answer_a_data[2][0], answer_b_data[2][0], answer_c_data[2][0]],
+    [answer_a_data[3][0], answer_b_data[3][0], answer_c_data[3][0]],
+    [answer_a_data[4][0], answer_b_data[4][0], answer_c_data[4][0]],
+    [answer_a_data[5][0], answer_b_data[5][0], answer_c_data[5][0]],
+    [answer_a_data[6][0], answer_b_data[6][0], answer_c_data[6][0]],
+    [answer_a_data[7][0], answer_b_data[7][0], answer_c_data[7][0]]
 ]
 
 
 start_game()
-
-
-
 
 
 
