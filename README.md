@@ -65,10 +65,17 @@
 #### I confirmed that the game is readable and easy to understand and all the game functions are working.
 
 ### Testing during development
-* Tested that the data was gotten as expected from the google sheet "planets-quiz" by printing out data from the spreadsheet and also adding data from run.py to the spreadsheet
+* Tested that the data was gotten as expected from the google sheet "planets-quiz" by printing out data from the spreadsheet and also adding data from run.py to the spreadsheet. The data was added as expected.S
 
 ![Test getting data from google sheets](/assets/images/test-print-add-data.png)
 ![Test getting data from google sheets](/assets/images/test-print-add-data-google-sheets.png)
+
+* Tested that the input is valid for all the inputs, otherwise ask the user to enter a valid input.
+![First input](/assets/images/validInput1.png)
+![Second input](/assets/images/validInput2.png)
+![Third input](/assets/images/validInput3.png)
+![Fourth input](/assets/images/validInput4.png)
+
 
 ------
 

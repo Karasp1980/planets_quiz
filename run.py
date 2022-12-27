@@ -94,7 +94,7 @@ def new_game():
                 break
                 
             else:
-                print("Invalid input, please enter a, b or c")
+                print("Invalid input, please enter a, b or c \n")
 
             
     display_score(correct_guesses, guesses)
@@ -155,11 +155,11 @@ def play_again():
     Allows the player to chose to play again or quit the game.
     """
 
-    response = input("Do you want to play again? (y/n): ")
+    response = input("Do you want to play again? (y/n): \n")
     response = response.lower()
 
     while response != 'y' and response != 'n':
-            response = input("Invalid input! Do you want to play again? (y/n): ")
+            response = input("Invalid input! Do you want to play again? (y/n): \n")
             response = response.lower()
 
     if response == "y":
