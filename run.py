@@ -38,29 +38,31 @@ def start_game():
     Allow player to enter name and start quiz.
     """
     print("⭐⭐⭐⭐⭐ Welcome to Our Planets quiz! ⭐⭐⭐⭐⭐")
+  
     player_name = input("Please enter your username: \n")
 
-    if player_name == " ":
+    while player_name == "":
         print("A username is required to start the quiz, please try again.")
-        start_game()
+        player_name = input("Please enter your username: \n")
 
-    else:
-        # Capitalizes the first letter in the name in case
-        # user enteres only lowercase letters
-        player_name = player_name.capitalize()
-        start = input(f"Hi {player_name} and welcome! Would you like to start the game? (y/n) \n")
+    # Capitalizes the first letter in the name in case
+    # user enteres only lowercase letters
+    player_name = player_name.capitalize()
+    start = input(f"Hi {player_name} and welcome! Would you like to start the game? (y/n) \n")
+    start = start.lower()
+
+    # Check that the input value is valid (y or n)
+    while start != 'y' and start != 'n':
+        start = input("Invalid input! Do you want to play? (y/n): \n")
         start = start.lower()
 
-        # Check that the input value is valid (y or n)
-        while start != 'y' and start != 'n':
-            start = input("Invalid input! Do you want to play? (y/n): ")
-            start = start.lower()
+    if start == "y":
+        print("Let´s start the game!⭐ \n")
+        new_game()
 
-        if start == "y":
-            print("Let´s start the game!⭐ \n")
-            new_game()
-        elif start == "n":
-            print("Welcome back next time, bye! \n") 
+    elif start == "n":
+        print("Welcome back next time, bye! \n") 
+
 
 def new_game():
     """
