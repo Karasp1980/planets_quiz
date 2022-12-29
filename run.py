@@ -173,13 +173,15 @@ def play_again():
         print("Thanks for playing!")
         return False 
 
+
+
 def check_score(correct_guesses, username):
     
     # Get the top_scores from the worksheet
     top_scores = SHEET.worksheet('top_scores')
     top_scores_data = top_scores.get_all_values()
 
-    # Create a dictionary to store the top scores and sorted scores
+    # Create a dictionarys to store the top scores and sorted scores in
     top_scores_dict = {}
     sorted_scores = {}
 
@@ -187,7 +189,7 @@ def check_score(correct_guesses, username):
     for row in top_scores_data:
         score_username = row[0]
         score = row[1]
-        
+     
         # Store the uesername and score in the dictionary
         top_scores_dict[score_username] = score
     
@@ -199,14 +201,23 @@ def check_score(correct_guesses, username):
 
     
     if correct_guesses >= int(lowest_score) and correct_guesses not in sorted_list[:5]:
+        # Append the new username and score to the spreadsheet
         top_scores.append_row([username, correct_guesses])
-        
 
-    top_scores_dict.update({'A1': sorted_list[0], 'B1': sorted_list[1], 'C1': sorted_list[2], 'D1': sorted_list[3], 'E1': sorted_list[4]})
+        # Iterate through the sorted list and update the spreadsheet with the top 5 scores
+        for i in range(0, 5):
+            # Get the username and score from the sorted list
+            score_username = sorted_list[i][0]
+            score = sorted_list[i][1]
     
-    for i in sorted_list[:5]:
-        top_scores_dict.update({i[0]: i[1]})
-        print(i[0], ' - ', i[1])
+            # Update the spreadsheet with the username and score
+            top_scores.update_cell(i+1, 1, score_username)
+            top_scores.update_cell(i+1, 2, score)
+            
+        # Print out the top 5 scores
+        for i in sorted_list[:5]:
+            top_scores_dict.update({i[0]: i[1]})
+            print(i[0], ' - ', i[1])            
 
 
 planet_questions = {
