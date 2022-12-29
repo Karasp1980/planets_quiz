@@ -32,23 +32,25 @@ answers_c = SHEET.worksheet('answers_c')
 answer_c_data = answers_c.get_all_values()
 
 
-
 def start_game():
     """
     Allow player to enter name and start quiz.
     """
     print("⭐⭐⭐⭐⭐ Welcome to Our Planets quiz! ⭐⭐⭐⭐⭐")
   
-    player_name = input("Please enter your username: \n")
+    # Defining username variable as global to be able to access it globaly, like from the check_scores() function
+    global username 
+    
+    username = input("Please enter your username: \n")
 
-    while player_name == "":
+    while username == "":
         print("A username is required to start the quiz, please try again.")
-        player_name = input("Please enter your username: \n")
+        username = input("Please enter your username: \n")
 
     # Capitalizes the first letter in the name in case
     # user enteres only lowercase letters
-    player_name = player_name.capitalize()
-    start = input(f"Hi {player_name} and welcome! Would you like to start the game? (y/n) \n")
+    username = username.capitalize()
+    start = input(f"Hi {username} and welcome! Would you like to start the game? (y/n) \n")
     start = start.lower()
 
     # Check that the input value is valid (y or n)
@@ -147,8 +149,11 @@ def display_score(correct_guesses, guesses):
     while j < correct_guesses:
         stars.append("⭐")
         j += 1   
-  
+
     print(f"Good job, you scored: {correct_guesses} out of {len(planet_questions)} {''.join(stars)}")
+
+    check_score(correct_guesses, username)
+
 
 def play_again():
     """
@@ -167,6 +172,41 @@ def play_again():
     elif response == "n":
         print("Thanks for playing!")
         return False 
+
+def check_score(correct_guesses, username):
+    
+    # Get the top_scores from the worksheet
+    top_scores = SHEET.worksheet('top_scores')
+    top_scores_data = top_scores.get_all_values()
+
+    # Create a dictionary to store the top scores and sorted scores
+    top_scores_dict = {}
+    sorted_scores = {}
+
+    # Iterate through the top_scores data to get the username and score
+    for row in top_scores_data:
+        score_username = row[0]
+        score = row[1]
+        
+        # Store the uesername and score in the dictionary
+        top_scores_dict[score_username] = score
+    
+
+    sorted_list = sorted(top_scores_dict.items(), key=lambda x: x[1], reverse=True)
+
+    # Get the lowest score in the list, the number 5 value
+    lowest_score = sorted_list[4][1]
+
+    
+    if correct_guesses >= int(lowest_score) and correct_guesses not in sorted_list[:5]:
+        top_scores.append_row([username, correct_guesses])
+        
+
+    top_scores_dict.update({'A1': sorted_list[0], 'B1': sorted_list[1], 'C1': sorted_list[2], 'D1': sorted_list[3], 'E1': sorted_list[4]})
+    
+    for i in sorted_list[:5]:
+        top_scores_dict.update({i[0]: i[1]})
+        print(i[0], ' - ', i[1])
 
 
 planet_questions = {
