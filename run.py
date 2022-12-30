@@ -213,11 +213,16 @@ def check_score(correct_guesses, username):
             # Update the spreadsheet with the username and score
             top_scores.update_cell(i+1, 1, score_username)
             top_scores.update_cell(i+1, 2, score)
-            
+
+    print_top_scores= input("Would you like to see the top scores? (y/n): \n") 
+    print_top_scores=print_top_scores.lower()
+
+    if print_top_scores == "y":  
         # Print out the top 5 scores
         for i in sorted_list[:5]:
             top_scores_dict.update({i[0]: i[1]})
-            print(i[0], ' - ', i[1])            
+            print(i[0], ' - ', i[1])  
+
 
 
 planet_questions = {
