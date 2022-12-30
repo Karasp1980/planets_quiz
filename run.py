@@ -202,6 +202,7 @@ def check_score(correct_guesses, username):
     if print_top_scores == "y":
         #print the values in the top_scores_data (now only containing the top 5 scores) in two columns 
         # with username-score, to be easy to read
+        # with help from https://stackoverflow.com/questions/13214809/pretty-print-2d-list/50257693#50257693
         print('\n'.join(['\t'.join([str(cell) for cell in row]) for row in top_scores_data]))
 
 

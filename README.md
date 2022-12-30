@@ -136,5 +136,5 @@
 * [W3Schools](https://www.w3schools.com/) 
 * [Bro Code](https://www.youtube.com/watch?v=yriw5Zh406s) 
 * [Wikipedia](https://www.wikipedia.org) 
-*
+* [Stackoverflow](https://stackoverflow.com/questions/13214809/pretty-print-2d-list/50257693#50257693)
 * 
