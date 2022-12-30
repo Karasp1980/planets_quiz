@@ -189,7 +189,7 @@ def check_score(correct_guesses, username):
     # sort the values in the top_scores_data by the second value (the score) in reverse order
     top_scores_data.sort(key=lambda x: x[1], reverse=True)
 
-    # take only the 5 top values/highest scores from the sorted top_scores_data
+    # take only the first 5 top values/highest scores from the sorted top_scores_data
     top_scores_data = top_scores_data[0:5]
 
     print_top_scores=input("Would you like to see the top 5 scores? (y/n): \n")
@@ -200,8 +200,8 @@ def check_score(correct_guesses, username):
             print_top_scores= print_top_scores.lower()
 
     if print_top_scores == "y":
-        #print the values in the top_scores_data (now only containing the top 5 scores) in columns (username - score)
-        # to be easy to read
+        #print the values in the top_scores_data (now only containing the top 5 scores) in two columns 
+        # with username-score, to be easy to read
         print('\n'.join(['\t'.join([str(cell) for cell in row]) for row in top_scores_data]))
 
 
