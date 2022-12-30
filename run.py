@@ -179,50 +179,30 @@ def check_score(correct_guesses, username):
     
     # Get the top_scores from the worksheet
     top_scores = SHEET.worksheet('top_scores')
+    
+    # add the username together with the score (correct_guesses) to the spread sheet
+    top_scores.append_row([username, correct_guesses])
+
+    # get all values from the spread sheet 
     top_scores_data = top_scores.get_all_values()
+   
+    # sort the values in the top_scores_data by the second value (the score) in reverse order
+    top_scores_data.sort(key=lambda x: x[1], reverse=True)
 
-    # Create a dictionarys to store the top scores and sorted scores in
-    top_scores_dict = {}
-    sorted_scores = {}
+    # take only the 5 top values/highest scores from the sorted top_scores_data
+    top_scores_data = top_scores_data[0:5]
 
-    # Iterate through the top_scores data to get the username and score
-    for row in top_scores_data:
-        score_username = row[0]
-        score = row[1]
-     
-        # Store the uesername and score in the dictionary
-        top_scores_dict[score_username] = score
-    
-
-    sorted_list = sorted(top_scores_dict.items(), key=lambda x: x[1], reverse=True)
-
-    # Get the lowest score in the list, the number 5 value
-    lowest_score = sorted_list[4][1]
-
-    
-    if correct_guesses >= int(lowest_score) and correct_guesses not in sorted_list[:5]:
-        # Append the new username and score to the spreadsheet
-        top_scores.append_row([username, correct_guesses])
-
-        # Iterate through the sorted list and update the spreadsheet with the top 5 scores
-        for i in range(0, 5):
-            # Get the username and score from the sorted list
-            score_username = sorted_list[i][0]
-            score = sorted_list[i][1]
-    
-            # Update the spreadsheet with the username and score
-            top_scores.update_cell(i+1, 1, score_username)
-            top_scores.update_cell(i+1, 2, score)
-
-    print_top_scores= input("Would you like to see the top scores? (y/n): \n") 
+    print_top_scores=input("Would you like to see the top 5 scores? (y/n): \n")
     print_top_scores=print_top_scores.lower()
 
-    if print_top_scores == "y":  
-        # Print out the top 5 scores
-        for i in sorted_list[:5]:
-            top_scores_dict.update({i[0]: i[1]})
-            print(i[0], ' - ', i[1])  
+    while print_top_scores != 'y' and print_top_scores != 'n':
+            print_top_scores = input("Invalid input! Would you like to see the top 5 scores? (y/n): \n")
+            print_top_scores= print_top_scores.lower()
 
+    if print_top_scores == "y":
+        #print the values in the top_scores_data (now only containing the top 5 scores) in columns (username - score)
+        # to be easy to read
+        print('\n'.join(['\t'.join([str(cell) for cell in row]) for row in top_scores_data]))
 
 
 planet_questions = {
@@ -247,7 +227,6 @@ options = [
     [answer_a_data[6][0], answer_b_data[6][0], answer_c_data[6][0]],
     [answer_a_data[7][0], answer_b_data[7][0], answer_c_data[7][0]]
 ]
-
 
 start_game()
 
