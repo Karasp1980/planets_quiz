@@ -65,10 +65,10 @@
 #### I confirmed that the game is readable and easy to understand and all the game functions are working.
 
 ### Testing during development
-* Tested that the data was gotten as expected from the google sheet "planets-quiz" by printing out data from the spreadsheet and also adding data from run.py to the spreadsheet. The data was added as expected.S
+* Tested that the data was gotten as expected from the google sheet "planets-quiz" by printing out data from the spreadsheet and also adding data from run.py to the spreadsheet. The data was added as expected.
 
 ![Test getting data from google sheets](/assets/images/test-print-add-data.png)
-![Test getting data from google sheets](/assets/images/test-print-add-data-google-sheets.png)
+![Test getting data into google sheets](/assets/images/test-print-add-data-google-sheets.png)
 
 * Tested that the input is valid for all the inputs, otherwise ask the user to enter a valid input.
 ![First input](/assets/images/validInput1.png)
@@ -76,6 +76,8 @@
 ![Third input](/assets/images/validInput3.png)
 ![Fourth input](/assets/images/validInput4.png)
 
+* Tested that the correct_guesses together with the username is printed to the spreadsheet when a game is over
+![Print to the top_scores google sheet]()
 
 ------
 
@@ -137,4 +139,5 @@
 * [Bro Code](https://www.youtube.com/watch?v=yriw5Zh406s) 
 * [Wikipedia](https://www.wikipedia.org) 
 * [Stackoverflow](https://stackoverflow.com/questions/13214809/pretty-print-2d-list/50257693#50257693)
-* 
+* [CI Tom - Pub Quiz](https://github.com/CI-Tom/pub-quiz-challenge)
+* [ANSI colors](https://code-maven.com/ansi-command-line-colors-with-python)

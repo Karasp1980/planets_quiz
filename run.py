@@ -118,10 +118,14 @@ def check_answer(answer, guess):
     """
 
     if answer == guess:
-        print("CORRECT!")
+        # If answer is correct, print correct in green color in order to make 
+        # it visable clear for the user 
+        # with help from https://code-maven.com/ansi-command-line-colors-with-python
+        print("\033[0;32mCORRECT!\033[0m")
         return 1
     else:
-        print("WRONG!")
+        # if the answer is wrong, print wrong in red color
+        print("\033[0;31mWRONG!\033[0m")
         return 0
 
 def display_score(correct_guesses, guesses):
@@ -186,7 +190,7 @@ def check_score(correct_guesses, username):
     # get all values from the spread sheet 
     top_scores_data = top_scores.get_all_values()
    
-    # sort the values in the top_scores_data by the second value (the score) in reverse order
+    # sort the values in the top_scores_data by the second value (=the score) in reverse order
     top_scores_data.sort(key=lambda x: x[1], reverse=True)
 
     # take only the first 5 top values/highest scores from the sorted top_scores_data
@@ -201,11 +205,13 @@ def check_score(correct_guesses, username):
 
     if print_top_scores == "y":
         #print the values in the top_scores_data (now only containing the top 5 scores) in two columns 
-        # with username-score, to be easy to read
+        # with username-score, to be make it easy to read
         # with help from https://stackoverflow.com/questions/13214809/pretty-print-2d-list/50257693#50257693
         print('\n'.join(['\t'.join([str(cell) for cell in row]) for row in top_scores_data]))
 
 
+# Store questions from the spread sheet
+# with help from https://github.com/CI-Tom/pub-quiz-challenge
 planet_questions = {
     question_data[0][0]: "a",
     question_data[1][0]: "b",
@@ -217,7 +223,6 @@ planet_questions = {
     question_data[7][0]: "b",
 }
 
-# Create lists with embedded lists of possible answers from worksheet
 options = [
     [answer_a_data[0][0], answer_b_data[1][0], answer_c_data[1][0]],
     [answer_a_data[1][0], answer_b_data[1][0], answer_c_data[1][0]],
