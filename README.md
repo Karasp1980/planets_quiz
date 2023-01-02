@@ -2,9 +2,9 @@
 ![Planets Quiz game](/assets/images/solar-system.jpg)
 
 # Welcome to Planets Quiz game!
-#### This game is designed in order to play a quiz game about the Planets in our solar system! The quiz contains 8 questions with a, b or c answers.
+#### This game, made for the Code Institute third project, is designed in order to play a quiz game about the Planets in our solar system! The quiz contains 8 questions with a, b or c answers.
 
-#### [Deployed site]()
+#### [Deployed site](https://planet-quiz-game.herokuapp.com/)
 ------
 
 # Table of Contents
@@ -26,11 +26,6 @@
 
 -----
 
-## Responsive
-
-#### The 
-----
-
 
 ## Flowchart
 
@@ -42,17 +37,26 @@
 ------
 ## Style/design
 
-### The game is designed with a simple terminal game design to make the game easy to play. The correct/wrong answers are displayed in green/red color to make that pop to the user. A background image with the planets was added to make the game more visiable appealing and also enhance the theme of the quiz.
-
+### The game is designed with a simple terminal game design to make the game easy to play. The correct/wrong answers are displayed in green/red color to make that pop to the user. A background image with the planets was added to make the game more visiable appealing and also enhance the theme of the quiz. 
+### The background image was taken from [Istockphoto](https://www.istockphoto.com/en/photo/solar-system-gm482954331-13391001?phrase=solar%20system)
 
 
 ----
 
 ## Features
 
+### Welcome section
+#### When starting the game a welcome section is displayed, and the user is asked to enter their username (the username can not be an empty string, in that case an Invalid input message show and the user is asked to enter username again). When username is entered the user is asked the question "Do you want to start the game?, and must input y (yes) or no (n) (in case any other letter is entered an Invalid input message accure and the user is asked to enter y or n again). If the user enters no (n) the game is closed, but if the input is yes the game starts and the questions start.
 
-### **Tim
 
+### Questions
+#### When the game starts the questions are displayed and the user is provided with 3 choices and is asked to answer a, b or c (in case any other letter is entered an Invalid input message accure and the user is asked to enter a, b or c again). When the answer is entered correct or wrong is displayed (in green or red) to let the user see directly if the answer was correct or not. The game contains 8 questions and the questions and ansewer_a, answer_b and answer_c options are stored in a google sheet. So it is easy if you would like to alter the questions.
+
+### Displaying results
+#### When all 8 questions are answered the scores are displayed. First a row with the answered alternatives from the user, then a row with the correct alternatives, and finally the total score. Good job, you scored: x out of y (8) followed by number of stars according to the number of correct answers in order to make it more visiable for the user. This score (connected to the username) is then stored in the google sheet in the top_scores file.
+
+### Printing top 5 scores
+#### When the scores have been displayed the user is asked if they want to print the top 5 scores. If the user enters no (n) the game is closed and the user is asked if they want to play again, but if the input is yes the top 5 scores are printed in two columns to let the user see if their result is in the top five scores. The ueser is then asked the question if they want to play again or not. If not, a good bye message appear and the game is closed. All inputs are checked for valid input.
 
 
 -------
@@ -77,7 +81,7 @@
 ![Fourth input](/assets/images/validInput4.png)
 
 * Tested that the correct_guesses together with the username is printed to the spreadsheet when a game is over
-![Print to the top_scores google sheet]()
+![Print to the top_scores google sheet](/assets/images/test-top-scores.png)
 
 ------
 
@@ -124,7 +128,7 @@
 
      - Click Enable Automatic Deploys in the automatic deploys section or make sure main branch is selected and click Deploy Branch in the manual deploy section.
 
-     - The live version of the app can be found here [Deployed site]()
+     - The live version of the app can be found here [Deployed site](https://planet-quiz-game.herokuapp.com/)
 
 
 -----
