@@ -2,7 +2,7 @@
 ![Planets Quiz game](/assets/images/solar-system.jpg)
 
 # Welcome to Planets Quiz game!
-#### This game is designed in order to play a quiz game about the Planets in our solar system! 
+#### This game is designed in order to play a quiz game about the Planets in our solar system! The quiz contains 8 questions with a, b or c answers.
 
 #### [Deployed site]()
 ------
@@ -42,7 +42,7 @@
 ------
 ## Style/design
 
-
+### The game is designed with a simple terminal game design to make the game easy to play. The correct/wrong answers are displayed in green/red color to make that pop to the user. A background image with the planets was added to make the game more visiable appealing and also enhance the theme of the quiz.
 
 
 
@@ -140,4 +140,4 @@
 * [Wikipedia](https://www.wikipedia.org) 
 * [Stackoverflow](https://stackoverflow.com/questions/13214809/pretty-print-2d-list/50257693#50257693)
 * [CI Tom - Pub Quiz](https://github.com/CI-Tom/pub-quiz-challenge)
-* [ANSI colors](https://code-maven.com/ansi-command-line-colors-with-python)
+* [ANSI colors](https://gist.github.com/kamito/704813)

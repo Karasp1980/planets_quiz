@@ -120,7 +120,7 @@ def check_answer(answer, guess):
     if answer == guess:
         # If answer is correct, print correct in green color in order to make 
         # it visable clear for the user 
-        # with help from https://code-maven.com/ansi-command-line-colors-with-python
+        # with help from https://gist.github.com/kamito/704813
         print("\033[0;32mCORRECT!\033[0m")
         return 1
     else:
