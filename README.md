@@ -1,5 +1,5 @@
 
-![Planets Quiz game](/assets/images/solar-system.jpg)
+![Planets Quiz game](/assets/images/solar-system.png)
 
 # Welcome to Planets Quiz game!
 #### This game, made for the Code Institute third project, is designed in order to play a quiz game about the Planets in our solar system! The quiz contains 8 questions with a, b or c answers.
@@ -12,7 +12,10 @@
 + [Flowchart](#flowchart)
 + [Style/design](#style-design)
 + [Features](#features)
-  + [](#)
+  + [Welcome section](#welcome-section)
+  + [Questions](#questions)
+  + [Display results](#display-results)
+  + [Printing top 5 scores](#printing-top-scores)
 + [Testing](#testing)
   + [Ufixed bugs](#unfixed-bugs)
 + [Solved issues](#solved-issues) 
