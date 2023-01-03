@@ -1,7 +1,7 @@
 
 ![Planets Quiz game](/assets/images/solar-system.png)
 
-# Welcome to Planets Quiz game!
+# Welcome to Our Planets Quiz game!
 #### This game, made for the Code Institute third project, is designed in order to play a quiz game about the Planets in our solar system! The quiz contains 8 questions with a, b or c answers.
 
 #### [Deployed site](https://planet-quiz-game.herokuapp.com/)
@@ -61,7 +61,7 @@
 #### When all 8 questions are answered the scores are displayed. First a row with the answered alternatives from the user, then a row with the correct alternatives, and finally the total score. Good job, you scored: x out of y (8) followed by number of stars according to the number of correct answers in order to make it more visiable for the user. This score (connected to the username) is then stored in the google sheet in the top_scores file.
 
 ### Printing top 5 scores
-#### When the scores have been displayed the user is asked if they want to print the top 5 scores. If the user enters no (n) the game is closed and the user is asked if they want to play again, but if the input is yes the top 5 scores are printed in two columns to let the user see if their result is in the top five scores. The ueser is then asked the question if they want to play again or not. If not, a good bye message appear and the game is closed. All inputs are checked for valid input.
+#### When the scores have been displayed the user is asked if they want to print the top 5 scores. If the user enters no (n) the game is closed and the user is asked if they want to play again, but if the input is yes the top 5 scores are printed in two columns to let the user see if their result is in the top five scores. Unfortunately the row might be altered a bit to the right if the username is too long, but found no better way to print in columns and in most cases the username is not to long to fit. The user is then asked the question if they want to play again or not. If not, a good bye message appear and the game is closed. All inputs are checked for valid input.
 
 
 -------
