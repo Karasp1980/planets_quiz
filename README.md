@@ -33,6 +33,8 @@
 ## Flowchart
 
 #### Wireframes were made by using [Lucidchart](https://lucid.app/)
+![Flowchart](/assets/images/flowchart.png)
+
 
 
 
@@ -148,3 +150,4 @@
 * [Stackoverflow](https://stackoverflow.com/questions/13214809/pretty-print-2d-list/50257693#50257693)
 * [CI Tom - Pub Quiz](https://github.com/CI-Tom/pub-quiz-challenge)
 * [ANSI colors](https://gist.github.com/kamito/704813)
+* [If name main](https://realpython.com/if-name-main-python/)

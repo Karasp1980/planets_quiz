@@ -193,7 +193,7 @@ def check_score(correct_guesses, username):
             )
         )
 
-
+# https://realpython.com/if-name-main-python/
 if __name__ == "__main__":
     SCOPE = [
         "https://www.googleapis.com/auth/spreadsheets",
