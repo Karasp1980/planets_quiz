@@ -60,7 +60,9 @@
 ![Questions](/assets/images/questions-section.png)
 
 ### Displaying results
-#### When all 8 questions are answered the scores are displayed. First a row with the answered alternatives from the user, then a row with the correct alternatives, and finally the total score. Good job, you scored: x out of y (8) followed by number of stars according to the number of correct answers in order to make it more visiable for the user. This score (connected to the username) is then stored in the google sheet in the top_scores file.
+#### When all 8 questions are answered the scores are displayed. First a row with the answered alternatives from the user, then a row with the correct alternatives, and finally the total score.
+![Compare results](/assets/images/compare-results.png) 
+Good job, you scored: x out of y (8) followed by number of stars according to the number of correct answers in order to make it more visiable for the user. This score (connected to the username) is then stored in the google sheet in the top_scores file.
 ![Display results](/assets/images/display-results.png)
 
 ### Printing top 5 scores
@@ -78,18 +80,18 @@
 #### I confirmed that the game is readable and easy to understand and all the game functions are working.
 
 ### Testing during development
-* Tested that the data was gotten as expected from the google sheet "planets-quiz" by printing out data from the spreadsheet and also adding data from run.py to the spreadsheet. The data was added as expected.
+* Tested that the data was gotten as expected from the google sheet "planets-quiz" by printing out data from the spreadsheet and also adding data from run.py to the spreadsheet. The data was added and printed as expected.
 
 ![Test getting data from google sheets](/assets/images/test-print-add-data.png)
 ![Test getting data into google sheets](/assets/images/test-print-add-data-google-sheets.png)
 
-* Tested that the input is valid for all the inputs, otherwise ask the user to enter a valid input.
+* Tested that the input is valid for all the inputs, otherwise ask the user to enter a valid input. The vaid input worked as expected.
 ![First input](/assets/images/validInput1.png)
 ![Second input](/assets/images/validInput2.png)
 ![Third input](/assets/images/validInput3.png)
 ![Fourth input](/assets/images/validInput4.png)
 
-* Tested that the correct_guesses together with the username is printed to the spreadsheet when a game is over. 
+* Tested that the correct_guesses together with the username is added to the spreadsheet when a game is over and it was added as expected.
 ![Print to the top_scores google sheet](/assets/images/test-top-scores.png)
 
 ------
@@ -99,6 +101,8 @@
 ### Python:
 #### No errors were returned when passed through the Pep8 validator
 [Pep8 validator](https://pep8ci.herokuapp.com/)
+![Pep8 validator](/assets/images/CILinter.png)
+
 
 
 -----

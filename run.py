@@ -13,7 +13,8 @@ def start_game():
     """
     print("⭐⭐⭐⭐⭐  Welcome to Our Planets quiz! ⭐⭐⭐⭐⭐")
 
-    # Defining username variable as global to be able to access it globaly, like from the check_scores() function
+    # Defining username variable as global to be able to access it globaly,
+    # like from the check_scores() function
     global username
 
     username = input("Please enter your username: \n")
@@ -26,7 +27,8 @@ def start_game():
     # user enteres only lowercase letters
     username = username.capitalize()
     start = input(
-        f"Hi {username} and welcome! Would you like to start the game? (y/n) \n"
+        f"Hi {username} and welcome!"
+        " Would you like to start the game? (y/n) \n"
     )
     start = start.lower()
 
@@ -68,7 +70,8 @@ def new_game():
             if guess in valid_inputs:
                 guesses.append(guess)
 
-                correct_guesses += check_answer(planet_questions.get(key), guess)
+                correct_guesses += check_answer(
+                    planet_questions.get(key), guess)
                 question_num += 1
                 break
 
@@ -130,9 +133,9 @@ def display_score(correct_guesses, guesses):
     while j < correct_guesses:
         stars.append("⭐")
         j += 1
-
     print(
-        f"Good job, you scored: {correct_guesses} out of {len(planet_questions)} {''.join(stars)}"
+        f"Good job, you scored: {correct_guesses} out of"
+        f" {len(planet_questions)} {''.join(stars)}"
     )
 
     check_score(correct_guesses, username)
@@ -162,19 +165,23 @@ def check_score(correct_guesses, username):
     # Get the top_scores from the worksheet
     top_scores = SHEET.worksheet("top_scores")
 
-    # add the username together with the score (correct_guesses) to the spread sheet
+    # add the username together with the score (correct_guesses)
+    # the spread sheet
     top_scores.append_row([username, correct_guesses])
 
     # get all values from the spread sheet
     top_scores_data = top_scores.get_all_values()
 
-    # sort the values in the top_scores_data by the second value (=the score) in reverse order
+    # sort the values in the top_scores_data by the second value (=the score)
+    # in reverse order
     top_scores_data.sort(key=lambda x: x[1], reverse=True)
 
-    # take only the first 5 top values/highest scores from the sorted top_scores_data
+    # take only the first 5 top values/highest scores from the sorted
+    # top_scores_data
     top_scores_data = top_scores_data[0:5]
 
-    print_top_scores = input("Would you like to see the top 5 scores? (y/n): \n")
+    print_top_scores = input(
+        "Would you like to see the top 5 scores? (y/n): \n")
     print_top_scores = print_top_scores.lower()
 
     while print_top_scores != "y" and print_top_scores != "n":
@@ -184,16 +191,22 @@ def check_score(correct_guesses, username):
         print_top_scores = print_top_scores.lower()
 
     if print_top_scores == "y":
-        # print the values in the top_scores_data (now only containing the top 5 scores) in two columns
+        # print the values in the top_scores_data
+        # (now only containing the top 5 scores) in two columns
         # with username-score, to be make it easy to read
-        # with help from https://stackoverflow.com/questions/13214809/pretty-print-2d-list/50257693#50257693
+        # with help from #
+        # https://stackoverflow.com/questions/13214809/pretty-print-2d-list/50257693#50257693
         print(
             "\n".join(
-                ["\t".join([str(cell) for cell in row]) for row in top_scores_data]
+                ["\t".join(
+                    [str(cell) for cell in row]
+                    ) for row in top_scores_data]
+                    )
             )
-        )
 
 # https://realpython.com/if-name-main-python/
+
+
 if __name__ == "__main__":
     SCOPE = [
         "https://www.googleapis.com/auth/spreadsheets",
@@ -242,3 +255,4 @@ if __name__ == "__main__":
         [answer_a_data[7][0], answer_b_data[7][0], answer_c_data[7][0]],
     ]
     start_game()
+    
