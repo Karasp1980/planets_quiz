@@ -114,12 +114,12 @@ def display_score(correct_guesses, guesses):
     """
     print("* * * * * * * * * * * * * * * * * * * * * * * * *")
     print("Your results:")
-    print("Answers: ", end="")
+    print("Correct answers: ", end="")
     for i in planet_questions:
         print(planet_questions.get(i), end=" ")
     print()
 
-    print("Guesses: ", end="")
+    print("Your answers:    ", end="")
     for i in guesses:
         print(i, end=" ")
     print()
