@@ -5,6 +5,7 @@ Import required modules
 import gspread
 
 from google.oauth2.service_account import Credentials
+import random
 
 
 def start_game():
@@ -16,7 +17,8 @@ def start_game():
     # Defining username variable as global to be able to access it globaly,
     # like from the check_scores() function
     global username
-
+    global planet_questions
+    global options
     username = input("Please enter your username: \n")
 
     while username == "":
@@ -49,12 +51,20 @@ def new_game():
     """
     Creates a new game and starts the game and starts displaying questions.
     """
-
+    global planet_questions
+    global options
     guesses = []
     correct_guesses = 0
     question_num = 1
-
-    for key in planet_questions:
+    #zip planet_questions and options 
+    zipped_questions_options = dict(zip(planet_questions, options))
+    # convert to list to be able to use random.shuffle to shuffle 
+    zipped_list = list(zipped_questions_options.items())
+    random.shuffle(zipped_list)
+    # redirecting to dictionary
+    d = dict(zipped_list)
+    # printing out the questions
+    for key, values in d.items():
         print("* * * * * * * * * * * * * * * * * * * * * * * * *")
         print(key)
 
@@ -62,7 +72,7 @@ def new_game():
 
             valid_inputs = ["a", "b", "c"]
 
-            for i in options[question_num - 1]:
+            for i in values:
                 print(i)
             guess = input("Enter (a, b or c): ")
             guess = guess.lower()
@@ -245,7 +255,7 @@ if __name__ == "__main__":
     }
 
     options = [
-        [answer_a_data[0][0], answer_b_data[1][0], answer_c_data[1][0]],
+        [answer_a_data[0][0], answer_b_data[0][0], answer_c_data[0][0]],
         [answer_a_data[1][0], answer_b_data[1][0], answer_c_data[1][0]],
         [answer_a_data[2][0], answer_b_data[2][0], answer_c_data[2][0]],
         [answer_a_data[3][0], answer_b_data[3][0], answer_c_data[3][0]],
@@ -253,6 +263,6 @@ if __name__ == "__main__":
         [answer_a_data[5][0], answer_b_data[5][0], answer_c_data[5][0]],
         [answer_a_data[6][0], answer_b_data[6][0], answer_c_data[6][0]],
         [answer_a_data[7][0], answer_b_data[7][0], answer_c_data[7][0]],
-    ]
+    ]   
     start_game()
     

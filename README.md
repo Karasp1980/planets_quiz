@@ -2,19 +2,19 @@
 ![Planets Quiz game](/assets/images/solar-system.png)
 
 # Welcome to Our Planets Quiz game!
-#### This game is made for the Code Institute third project. It is designed to play a quiz game about the Planets in our solar system! The quiz contains 8 questions with a, b or c answers.
+#### This game is made for the Code Institute third project. It is designed to play a quiz game about the Planets in our solar system! The quiz contains 8 questions with a, b or c answers. The user is asked to enter username and answer the questions and then the scores display and the user also gets the opportunity to print the top 5 scores to see if the result is in there.
 
 #### [Deployed site](https://planet-quiz-game.herokuapp.com/)
 ------
 
 # Table of Contents
 + [Flowchart](#flowchart)
-+ [Style/design](#style-design)
++ [Design](#design)
 + [Features](#features)
   + [Welcome section](#welcome-section)
   + [Questions](#questions)
-  + [Display results](#display-results)
-  + [Printing top 5 scores](#printing-top-scores)
+  + [Displaying results](#displaying-results)
+  + [Printing top 5 scores](#printing-top-5-scores)
 + [Testing](#testing)
 + [Validator testing](#validator-testing)
 + [Ufixed bugs](#unfixed-bugs)
@@ -35,9 +35,9 @@
 
 
 ------
-## Style/design
+## Design
 
-### The game is designed with a simple terminal game design to make the game easy to play. The correct/wrong answers are displayed in green/red color to make that pop to the user. A background image with the planets was added to make the game more visiable appealing and also enhance the theme of the quiz. 
+### The game is designed with a simple terminal game design to make the game easy to play. The correct/wrong answers are displayed in green/red color to make that pop to the user. The yellow start are used to pop on the black python window and also represent the theme of the quiz. A background image with the planets was added to make the game more visiable appealing and also enhance the theme. 
 ### The background image was taken from [Istockphoto](https://www.istockphoto.com/en/photo/solar-system-gm482954331-13391001?phrase=solar%20system)
 
 
