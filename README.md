@@ -158,3 +158,4 @@ Good job, you scored: x out of y (8) followed by number of stars according to th
 * [CI Tom - Pub Quiz](https://github.com/CI-Tom/pub-quiz-challenge)
 * [ANSI colors](https://gist.github.com/kamito/704813)
 * [If__name__main](https://realpython.com/if-name-main-python/)
+* [Realpython](https://realpython.com/iterate-through-dictionary-python/#iterating-through-items)

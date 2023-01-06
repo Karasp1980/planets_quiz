@@ -56,14 +56,15 @@ def new_game():
     guesses = []
     correct_guesses = 0
     question_num = 1
-    #zip planet_questions and options 
+    # zip planet_questions and options
     zipped_questions_options = dict(zip(planet_questions, options))
-    # convert to list to be able to use random.shuffle to shuffle 
+    # convert to list to be able to use random.shuffle to shuffle
     zipped_list = list(zipped_questions_options.items())
     random.shuffle(zipped_list)
     # redirecting to dictionary
     d = dict(zipped_list)
-    # printing out the questions
+    # printing out the questions with help from
+    # https://realpython.com/iterate-through-dictionary-python/#iterating-through-items
     for key, values in d.items():
         print("* * * * * * * * * * * * * * * * * * * * * * * * *")
         print(key)
@@ -262,7 +263,6 @@ if __name__ == "__main__":
         [answer_a_data[4][0], answer_b_data[4][0], answer_c_data[4][0]],
         [answer_a_data[5][0], answer_b_data[5][0], answer_c_data[5][0]],
         [answer_a_data[6][0], answer_b_data[6][0], answer_c_data[6][0]],
-        [answer_a_data[7][0], answer_b_data[7][0], answer_c_data[7][0]],
-    ]   
+        [answer_a_data[7][0], answer_b_data[7][0], answer_c_data[7][0]], ]
     start_game()
     
