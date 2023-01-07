@@ -275,9 +275,9 @@ if __name__ == "__main__":
         [answer_a_data[7][0], answer_b_data[7][0], answer_c_data[7][0]],
         [answer_a_data[8][0], answer_b_data[8][0], answer_c_data[8][0]],
         [answer_a_data[9][0], answer_b_data[9][0], answer_c_data[9][0]],
-        [answer_a_data[10][0], answer_b_data[10][0], answer_c_data[10][0]]
-        [answer_a_data[11][0], answer_b_data[11][0], answer_c_data[11][0]]
-        [answer_a_data[12][0], answer_b_data[12][0], answer_c_data[12][0]]
+        [answer_a_data[10][0], answer_b_data[10][0], answer_c_data[10][0]],
+        [answer_a_data[11][0], answer_b_data[11][0], answer_c_data[11][0]],
+        [answer_a_data[12][0], answer_b_data[12][0], answer_c_data[12][0]],
         [answer_a_data[13][0], answer_b_data[13][0], answer_c_data[13][0]], ]
     start_game()
     
