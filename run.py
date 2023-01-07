@@ -58,9 +58,12 @@ def new_game():
     question_num = 1
     # zip planet_questions and options
     zipped_questions_options = dict(zip(planet_questions, options))
-    # convert to list to be able to use random.shuffle to shuffle
+    # convert to list to be able to use random.shuffle to shuffle. Help from
+    # https://stackoverflow.com/questions/19895028/randomly-shuffling-a-dictionary-in-python
     zipped_list = list(zipped_questions_options.items())
     random.shuffle(zipped_list)
+    # Only use 8 questions, so all the questions are not printed every game (but altered)
+    zipped_list = zipped_list[0:8]
     # redirecting to dictionary
     d = dict(zipped_list)
     # printing out the questions with help from
@@ -146,7 +149,7 @@ def display_score(correct_guesses, guesses):
         j += 1
     print(
         f"Good job, you scored: {correct_guesses} out of"
-        f" {len(planet_questions)} {''.join(stars)}"
+        f" 8 {''.join(stars)}"
     )
 
     check_score(correct_guesses, username)
@@ -253,6 +256,12 @@ if __name__ == "__main__":
         question_data[5][0]: "b",
         question_data[6][0]: "c",
         question_data[7][0]: "b",
+        question_data[8][0]: "a",
+        question_data[9][0]: "b",
+        question_data[10][0]: "b",
+        question_data[11][0]: "c",
+        question_data[12][0]: "a",
+        question_data[13][0]: "b",
     }
 
     options = [
@@ -263,6 +272,12 @@ if __name__ == "__main__":
         [answer_a_data[4][0], answer_b_data[4][0], answer_c_data[4][0]],
         [answer_a_data[5][0], answer_b_data[5][0], answer_c_data[5][0]],
         [answer_a_data[6][0], answer_b_data[6][0], answer_c_data[6][0]],
-        [answer_a_data[7][0], answer_b_data[7][0], answer_c_data[7][0]], ]
+        [answer_a_data[7][0], answer_b_data[7][0], answer_c_data[7][0]],
+        [answer_a_data[8][0], answer_b_data[8][0], answer_c_data[8][0]],
+        [answer_a_data[9][0], answer_b_data[9][0], answer_c_data[9][0]],
+        [answer_a_data[10][0], answer_b_data[10][0], answer_c_data[10][0]]
+        [answer_a_data[11][0], answer_b_data[11][0], answer_c_data[11][0]]
+        [answer_a_data[12][0], answer_b_data[12][0], answer_c_data[12][0]]
+        [answer_a_data[13][0], answer_b_data[13][0], answer_c_data[13][0]], ]
     start_game()
     

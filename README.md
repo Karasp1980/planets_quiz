@@ -56,13 +56,13 @@
 
 
 ### Questions
-#### When the game starts the questions are displayed and the user is provided with 3 choices and is asked to answer a, b or c (in case any other letter is entered an Invalid input message accure and the user is asked to enter a, b or c again). When the answer is entered correct or wrong is displayed (in green or red) to let the user see directly if the answer was correct or not. The game contains 8 questions and the questions and ansewer_a, answer_b and answer_c options are stored in a google sheet. So it is easy if you would like to alter the questions.
+#### When the game starts the questions are displayed and the user is provided with 3 choices and is asked to answer a, b or c (in case any other letter is entered an Invalid input message accure and the user is asked to enter a, b or c again). The questions and answers (as well as the scores) are stored in a google sheet. There are 14 questions in the google sheet but only 8 are displayed each game in order to alter the questions a bit and the questions are shuffled for each game and printed in random order for each game. This was a feature that felt important to make it more intreaguing to play another round. When the answer is entered correct or wrong is displayed (in green or red) to let the user see directly if the answer was correct or not. The game contains 8 questions and the questions and ansewer_a, answer_b and answer_c options are stored in a google sheet. So it is easy if you would like to alter the questions.
 ![Questions](/assets/images/questions-section.png)
 
 ### Displaying results
 #### When all 8 questions are answered the scores are displayed. First a row with the answered alternatives from the user, then a row with the correct alternatives, and finally the total score.
 ![Compare results](/assets/images/compare-results.png) 
-Good job, you scored: x out of y (8) followed by number of stars according to the number of correct answers in order to make it more visiable for the user. This score (connected to the username) is then stored in the google sheet in the top_scores file.
+### Good job, you scored: x out of y (8) followed by number of stars according to the number of correct answers in order to make it more visiable for the user. This score (connected to the username) is then stored in the google sheet in the top_scores file.
 ![Display results](/assets/images/display-results.png)
 
 ### Printing top 5 scores
@@ -148,14 +148,14 @@ Good job, you scored: x out of y (8) followed by number of stars according to th
 
 ## Credits
 
-#### Inspiration and help has come from the Code Institute projects [Love Sandwiches](https://github.com/Karasp1980/love_sandwiches). 
+#### Inspiration and help has come from the Code Institute projects [Love Sandwiches](https://github.com/Karasp1980/love_sandwiches).The answers of the questions has been checked using [Wikipedia](https://www.wikipedia.org) 
 
 #### The following sites has also been helpful:
 * [W3Schools](https://www.w3schools.com/) 
-* [Bro Code](https://www.youtube.com/watch?v=yriw5Zh406s) 
-* [Wikipedia](https://www.wikipedia.org) 
-* [Stackoverflow](https://stackoverflow.com/questions/13214809/pretty-print-2d-list/50257693#50257693)
+* [Bro Code](https://www.youtube.com/watch?v=yriw5Zh406s)  
+* [Stackoverflow print 2D](https://stackoverflow.com/questions/13214809/pretty-print-2d-list/50257693#50257693)
 * [CI Tom - Pub Quiz](https://github.com/CI-Tom/pub-quiz-challenge)
 * [ANSI colors](https://gist.github.com/kamito/704813)
 * [If__name__main](https://realpython.com/if-name-main-python/)
 * [Realpython](https://realpython.com/iterate-through-dictionary-python/#iterating-through-items)
+* [Stackoverflow shuffeling dictionary](https://stackoverflow.com/questions/19895028/randomly-shuffling-a-dictionary-in-python)
