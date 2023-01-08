@@ -62,7 +62,7 @@ def new_game():
     # https://stackoverflow.com/questions/19895028/randomly-shuffling-a-dictionary-in-python
     zipped_list = list(zipped_questions_options.items())
     random.shuffle(zipped_list)
-    # Only use 8 questions, so all the questions are not printed every game (but altered)
+    # Only use 8 questions, so all the questions are not printed every game
     zipped_list = zipped_list[0:8]
     # redirecting to dictionary
     d = dict(zipped_list)
@@ -280,4 +280,3 @@ if __name__ == "__main__":
         [answer_a_data[12][0], answer_b_data[12][0], answer_c_data[12][0]],
         [answer_a_data[13][0], answer_b_data[13][0], answer_c_data[13][0]], ]
     start_game()
-    

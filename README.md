@@ -2,7 +2,7 @@
 ![Planets Quiz game](/assets/images/solar-system.png)
 
 # Welcome to Our Planets Quiz game!
-#### This game is made for the Code Institute third project. It is designed to play a quiz game about the Planets in our solar system! The quiz contains 8 questions with a, b or c answers. The user is asked to enter username and answer the questions and then the scores display and the user also gets the opportunity to print the top 5 scores to see if the result is in there.
+#### This game is made for the Code Institute third project. It is designed to play a quiz game about the Planets in our solar system! The quiz contains 8 questions with a, b or c answers. The user is asked to enter username and answer the questions and then the scores display and the user also gets the opportunity to print the top 5 scores to see if the result is in there. 
 
 #### [Deployed site](https://planet-quiz-game.herokuapp.com/)
 ------
@@ -56,7 +56,7 @@
 
 
 ### Questions
-#### When the game starts the questions are displayed and the user is provided with 3 choices and is asked to answer a, b or c (in case any other letter is entered an Invalid input message accure and the user is asked to enter a, b or c again). The questions and answers (as well as the scores) are stored in a google sheet. There are 14 questions in the google sheet but only 8 are displayed each game in order to alter the questions a bit and the questions are shuffled for each game and printed in random order for each game. This was a feature that felt important to make it more intreaguing to play another round. When the answer is entered correct or wrong is displayed (in green or red) to let the user see directly if the answer was correct or not. The game contains 8 questions and the questions and ansewer_a, answer_b and answer_c options are stored in a google sheet. So it is easy if you would like to alter the questions.
+#### When the game starts the questions are displayed and the user is provided with 3 choices and is asked to answer a, b or c (in case any other letter is entered an Invalid input message accure and the user is asked to enter a, b or c again). The questions and answers (as well as the scores) are stored in a google sheet. There are 14 questions in the google sheet but only 8 are displayed each game in order to alter the questions a bit and the questions are shuffled for each game and printed in random order for each game. This was a feature that felt important to make it more intreaguing to play another round. When the answer is entered correct or wrong is displayed (in green or red) to let the user see directly if the answer was correct or not. 
 ![Questions](/assets/images/questions-section.png)
 
 ### Displaying results
