@@ -14,8 +14,7 @@ def start_game():
     """
     print("⭐⭐⭐⭐⭐  Welcome to Our Planets quiz! ⭐⭐⭐⭐⭐")
 
-    # Defining username variable as global to be able to access it globaly,
-    # like from the check_scores() function
+    # Defining variables as global to be able to access it globaly
     global username
     global planet_questions
     global options
@@ -25,7 +24,7 @@ def start_game():
         print("A username is required to start the quiz, please try again.")
         username = input("Please enter your username: \n")
 
-    # Capitalizes the first letter in the name in case
+    # Capitalizes the first letter in the username in case
     # user enteres only lowercase letters
     username = username.capitalize()
     start = input(
@@ -58,7 +57,7 @@ def new_game():
     question_num = 1
     # zip planet_questions and options
     zipped_questions_options = dict(zip(planet_questions, options))
-    # convert to list to be able to use random.shuffle to shuffle. Help from
+    # convert to list to be able to use random.shuffle. Help from
     # https://stackoverflow.com/questions/19895028/randomly-shuffling-a-dictionary-in-python
     zipped_list = list(zipped_questions_options.items())
     random.shuffle(zipped_list)
@@ -180,7 +179,7 @@ def check_score(correct_guesses, username):
     top_scores = SHEET.worksheet("top_scores")
 
     # add the username together with the score (correct_guesses)
-    # the spread sheet
+    # to the spread sheet
     top_scores.append_row([username, correct_guesses])
 
     # get all values from the spread sheet
